@@ -173,7 +173,7 @@ function updateCountdown() {
     document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
 }
 
-const countdownTimer = setInterval(updateCountdown, 5000);
+const countdownTimer = setInterval(updateCountdown, 1000);
 
 // فتح صفحة الهدايا
 function openGifts() {
