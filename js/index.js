@@ -146,12 +146,12 @@ function showRockets() {
 // العد التنازلي حتى 11 أغسطس بتوقيت الجزائر
 function updateCountdown() {
     // تحديد تاريخ 11 أغسطس 2025 بتوقيت الجزائر (UTC+1)
-    const targetDate = new Date('2024-08-11T00:00:00+01:00');
+    const targetDate = new Date('2025-08-11T00:00:00+01:00');
     const now = new Date();
+    
 
     // حساب الفرق بين التواريخ
-    const diff = targetDate - now;
-
+    const diff = targetDate.getTime() - now.getTime() ;
     if (diff <= 0) {
         document.getElementById('countdown').style.display = 'none';
         document.getElementById('giftButton').style.display = 'inline-block';
@@ -172,6 +172,8 @@ function updateCountdown() {
     document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
     document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
 }
+
+const countdownTimer = setInterval(updateCountdown, 5000);
 
 // فتح صفحة الهدايا
 function openGifts() {
